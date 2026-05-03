@@ -69,7 +69,10 @@ jobs:
           path: blob-report
 
       - name: Merge reports and generate summary
-        run: npx playwright merge-reports --reporter=github,html ./blob-report
+        run: npx playwright merge-reports --config scripts/playwright-reporter-config.ts ./blob-report
+
+      - name: Merge into HTML report
+        run: npx playwright merge-reports --reporter html ./blob-report
 
       - name: Upload HTML report
         if: ${{ !cancelled() }}
