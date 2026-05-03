@@ -72,7 +72,7 @@ A manually triggered GitHub Actions workflow runs the full suite against Chromiu
 
 To trigger: **Actions → Playwright Tests → Run workflow**
 
-Example run: [Playwright Tests #6](https://github.com/TesterUseryx/capslock-qa-playwright/actions/runs/25281702772)
+Example run: [Playwright Tests #7](https://github.com/TesterUseryx/capslock-qa-playwright/actions/runs/25283699082)
 
 ---
 
