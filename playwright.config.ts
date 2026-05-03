@@ -7,7 +7,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [['html', { open: 'never' }]],
+  reporter: process.env.CI ? 'blob' : [['html', { open: 'never' }]],
   globalSetup: './utils/globalSetup.ts',
 
   use: {

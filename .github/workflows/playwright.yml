@@ -34,7 +34,7 @@ jobs:
         run: npx playwright install chromium --with-deps
 
       - name: Run Playwright tests (Chromium)
-        run: npx playwright test --project=chromium --reporter=blob
+        run: npx playwright test --project=chromium
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
 
@@ -71,19 +71,10 @@ jobs:
       - name: Merge into HTML report
         run: npx playwright merge-reports --reporter html ./blob-report
 
-      - name: Merge into JUnit report
-        run: npx playwright merge-reports --reporter junit ./blob-report
-        env:
-          PLAYWRIGHT_JUNIT_OUTPUT_NAME: test-results.xml
-
-      - name: Publish results to GitHub summary
-        uses: dorny/test-reporter@v1
-        if: ${{ !cancelled() }}
-        with:
-          name: Playwright – Chromium
-          path: test-results.xml
-          reporter: java-junit
-          fail-on-error: false
+      - name: Merge into Markdown summary
+        run: |
+          npx playwright merge-reports --reporter markdown ./blob-report
+          cat report.md >> $GITHUB_STEP_SUMMARY
 
       - name: Upload HTML report
         if: ${{ !cancelled() }}
