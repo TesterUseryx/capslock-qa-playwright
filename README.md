@@ -236,3 +236,11 @@ Example run: [Playwright Tests #7](https://github.com/TesterUseryx/capslock-qa-p
 8. **Jira integration** -auto-create or update Jira defect tickets for consistently failing tests, linking CI run details and failure screenshots directly to the issue tracker.
 
 9. **AI-assisted test generation** -use AI tooling to generate initial test cases from user stories or acceptance criteria, suggest maintenance fixes when selectors break after page updates, and assist with manual test case authoring.
+
+---
+
+## Part 2 – Written Evaluation
+
+The written evaluation (answers to the four management and process questions) is included in this repository as a separate document:
+
+[Part 2 - Written Evaluation.pdf](./Part%202%20-%20Written%20Evaluation.pdf)
