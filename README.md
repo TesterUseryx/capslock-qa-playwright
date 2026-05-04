@@ -44,9 +44,11 @@ The `globalSetup.ts` automatically loads `.env.<test_env>` before the tests run.
 
 | Command | Description |
 |---|---|
-| `npm test` | Run all tests headlessly (Chromium, Firefox, WebKit) |
+| `npm test` | Run all tests headlessly |
 | `npm run test:headed` | Run with a visible browser window |
 | `npm run test:report` | Open the last HTML report |
+
+> **Browser configuration:** Firefox and WebKit are temporarily commented out in `playwright.config.ts` for a faster local run. To enable cross-browser execution, uncomment the Firefox and WebKit project blocks in that file. All three browsers are fully supported.
 
 Tests can also be filtered by tag:
 
